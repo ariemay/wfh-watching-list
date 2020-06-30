@@ -17,7 +17,6 @@ struct ContentView_Previews: PreviewProvider {
 struct ContentView: View {
     
     @State private var results = [Movie]()
-    var baseurlImage: String = "https://image.tmdb.org/t/p/w185"
     
     init() {
         let coloredAppearance = UINavigationBarAppearance()
@@ -37,11 +36,15 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 Text("Top Movie List")
                     .font(.title3)
-                ScrollView(.horizontal) {
+                    .fontWeight(.bold)
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(results) { res in
                             VStack {
-                            ImageViewWidget(url: baseurlImage + res.poster_path)
+                                NavigationLink(destination: MovieDetails(data: res)) {
+                                    ImageViewWidget(url: Configurations.API_URL_IMAGE + res.poster_path)
+                                }
+                                .buttonStyle(PlainButtonStyle())
                             }
                         }
                     }.onAppear {
@@ -56,7 +59,7 @@ struct ContentView: View {
     }
     
     func loadData() {
-        let json = "https://api.themoviedb.org/3/movie/top_rated?api_key=3d6b6b6c1ceb0ab7ccfbc54cb997b1a2"
+        let json = Configurations.API_TOP_RATE_MOVIES
         
         guard let url = URL(string: json) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, err) in

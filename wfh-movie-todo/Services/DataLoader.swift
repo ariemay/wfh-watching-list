@@ -44,6 +44,8 @@ struct ImageViewWidget: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 300)
                 .cornerRadius(20)
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/, 5)
+                .shadow(radius: 5)
         }
     }
 }

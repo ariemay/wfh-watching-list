@@ -15,3 +15,7 @@ struct Movie: Decodable, Identifiable {
 struct MovieRequest: Decodable {
     let results: [Movie]
 }
+
+
+let testData = Movie(id: 1, title: "Avenger", poster_path: "test", overview: "test")
+
