@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3E5EB024AAF62B00366947 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3E5EAF24AAF62B00366947 /* DataLoader.swift */; };
 		8DF3888C24AA9BC8004D248A /* wfh_movie_todoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3888B24AA9BC8004D248A /* wfh_movie_todoApp.swift */; };
 		8DF3888E24AA9BC8004D248A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3888D24AA9BC8004D248A /* ContentView.swift */; };
 		8DF3889024AA9BC9004D248A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF3888F24AA9BC9004D248A /* Assets.xcassets */; };
 		8DF3889324AA9BC9004D248A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF3889224AA9BC9004D248A /* Preview Assets.xcassets */; };
+		8DF3889D24AAA787004D248A /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3889C24AAA787004D248A /* Movies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D3E5EAF24AAF62B00366947 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		8DF3888824AA9BC8004D248A /* wfh-movie-todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wfh-movie-todo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DF3888B24AA9BC8004D248A /* wfh_movie_todoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wfh_movie_todoApp.swift; sourceTree = "<group>"; };
 		8DF3888D24AA9BC8004D248A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8DF3888F24AA9BC9004D248A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DF3889224AA9BC9004D248A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8DF3889424AA9BC9004D248A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF3889C24AAA787004D248A /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				8DF3888B24AA9BC8004D248A /* wfh_movie_todoApp.swift */,
 				8DF3888D24AA9BC8004D248A /* ContentView.swift */,
+				8D3E5EAF24AAF62B00366947 /* DataLoader.swift */,
+				8DF3889C24AAA787004D248A /* Movies.swift */,
 				8DF3888F24AA9BC9004D248A /* Assets.xcassets */,
 				8DF3889424AA9BC9004D248A /* Info.plist */,
 				8DF3889124AA9BC9004D248A /* Preview Content */,
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3E5EB024AAF62B00366947 /* DataLoader.swift in Sources */,
 				8DF3888E24AA9BC8004D248A /* ContentView.swift in Sources */,
 				8DF3888C24AA9BC8004D248A /* wfh_movie_todoApp.swift in Sources */,
+				8DF3889D24AAA787004D248A /* Movies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
