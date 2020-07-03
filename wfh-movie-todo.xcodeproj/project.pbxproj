@@ -15,6 +15,7 @@
 		8DF3889024AA9BC9004D248A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF3888F24AA9BC9004D248A /* Assets.xcassets */; };
 		8DF3889324AA9BC9004D248A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DF3889224AA9BC9004D248A /* Preview Assets.xcassets */; };
 		8DF3889D24AAA787004D248A /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3889C24AAA787004D248A /* Movies.swift */; };
+		C679506624ABBC8F00666CF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C679506524ABBC8F00666CF1 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8DF3889224AA9BC9004D248A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8DF3889424AA9BC9004D248A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF3889C24AAA787004D248A /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		C679506524ABBC8F00666CF1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				8D3E5EAF24AAF62B00366947 /* DataLoader.swift */,
+				C679506524ABBC8F00666CF1 /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				8D3E5EB024AAF62B00366947 /* DataLoader.swift in Sources */,
 				8D3E5EB624AB0D5400366947 /* Configurations.swift in Sources */,
 				8DF3888E24AA9BC8004D248A /* ContentView.swift in Sources */,
+				C679506624ABBC8F00666CF1 /* NetworkManager.swift in Sources */,
 				8DF3888C24AA9BC8004D248A /* wfh_movie_todoApp.swift in Sources */,
 				8DF3889D24AAA787004D248A /* Movies.swift in Sources */,
 				8D3E5EBA24AB109800366947 /* MovieDetails.swift in Sources */,
@@ -312,7 +316,7 @@
 				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "wfh-movie-todo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +338,7 @@
 				DEVELOPMENT_TEAM = 7QAVKC3WGP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "wfh-movie-todo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

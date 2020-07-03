@@ -16,7 +16,7 @@ struct ContentView_Previews: PreviewProvider {
 
 struct ContentView: View {
     
-    @State private var results = [Movie]()
+    @ObservedObject var networkManager: NetworkManager = NetworkManager()
     
     init() {
         let coloredAppearance = UINavigationBarAppearance()
@@ -34,44 +34,55 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
-                Text("Top Movie List")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(results) { res in
-                            VStack {
-                                NavigationLink(destination: MovieDetails(data: res)) {
-                                    ImageViewWidget(url: Configurations.API_URL_IMAGE + res.poster_path)
+                ScrollView(.vertical, showsIndicators: false) {
+                    Text("Top Movie List")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            ForEach(networkManager.topMovies) { res in
+                                VStack {
+                                    MovieList(data: res)
                                 }
-                                .buttonStyle(PlainButtonStyle())
                             }
+                        }.onAppear {
+                            self.networkManager.loadTopMovies()
                         }
-                    }.onAppear {
-                        loadData()
                     }
+                    Text("Now Playing Movie")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            ForEach(networkManager.nowPlayingMovies) {
+                                res in
+                                VStack {
+                                    MovieList(data: res)
+                                }
+                            }
+                        }.onAppear {
+                            self.networkManager.loadNowPlayingMovies()
+                        }
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .navigationBarTitle("WFH Watching List")
+                .padding()
             }
-            .navigationBarTitle("WFH Watching List")
-            .padding()
         }
-    }
-    
-    func loadData() {
-        let json = Configurations.API_TOP_RATE_MOVIES
-        
-        guard let url = URL(string: json) else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-            guard let data = data else { return }
-            let movieRequest = try! JSONDecoder().decode(MovieRequest.self, from: data)
-            
-            DispatchQueue.main.async {
-                results = movieRequest.results
-            }
-        }.resume()
     }
     
 }
 
 
+
+struct MovieList: View {
+    @State var data: Movie
+    
+    var body: some View {
+        NavigationLink(destination: MovieDetails(data: data)) {
+            ImageViewWidget(url: Configurations.API_URL_IMAGE + data.poster_path)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
